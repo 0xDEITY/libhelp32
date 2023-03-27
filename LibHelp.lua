@@ -41,7 +41,7 @@ end
 
 --#region "Main"
 
-local LibHelp = {}
+local LibHelp = { Version = "1.0" }
 
 --#region "Service Class"
 
@@ -81,16 +81,4 @@ end
 
 --#endregion
 
--- return LibHelp
-
-local LibHelp = LibHelp
-local Object = LibHelp.Object
-local Services = LibHelp.Services
-
-print(Services.UserInputService)
-
-local gui = Object:new("ScreenGui")
-
-local frame = gui:new("Frame", {
-    Size = UDim2.fromOffset(200, 200)
-})
+return LibHelp
