@@ -14,11 +14,18 @@ local CoreGuiService = game:GetService("CoreGui")
 
 --#endregion
 
+local LibHelp = { 
+    Version = "1.0",
+    Configuration = {
+        RootParent = CoreGuiService
+    }
+}
+
 --#region "Functions"
 
 local function SetParent(object, parent)
     if parent.ChildObjects then table.insert(parent.ChildObjects, object) end
-    object.Instance.Parent = object.Properties.Parent or object.ParentObject.Instance or CoreGuiService
+    object.Instance.Parent = object.Properties.Parent or object.ParentObject.Instance or LibHelp.Configuration.RootParent
 end
 
 local function ApplyProperties(object)
@@ -40,8 +47,6 @@ end
 --#endregion
 
 --#region "Main"
-
-local LibHelp = { Version = "1.0" }
 
 --#region "Service Class"
 
